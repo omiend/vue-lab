@@ -8,6 +8,8 @@
         {{item.name}}
       </li>
     </ul>
+    <h3>イベントハンドリング</h3>
+    <button v-on:click="onClick">実行</button>
   </div>
 </template>
 
@@ -34,6 +36,12 @@ export default Vue.extend({
           name: "マウス"
         }
       ] as Item[]
+    }
+  },
+  // ここにメソッドを追加する
+  methods: {
+    onClick(): void {
+      alert(this.msg);
     }
   }
 })
