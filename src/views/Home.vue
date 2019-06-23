@@ -15,6 +15,10 @@
     <h3>条件付きレンダリング</h3>
     <button v-on:click="showDetail">表示</button>
     <div v-show="detail">詳細が表示されました。</div>
+    <button v-on:click="raiseError">エラー</button>
+    <div v-bind:class="{ 'text-danger': hasError }">
+      システムからのメッセージ
+    </div>
   </div>
 </template>
 
@@ -30,7 +34,7 @@ declare interface Item {
 export default Vue.extend({
   computed: {
     computedMsg(): string {
-      return this.msg.replace(/!/g, "") + " + TypeScript!";
+      return this.msg.replace(/!/g, "") + " + TypeScript!"
     }
   },
   data() {
@@ -46,7 +50,8 @@ export default Vue.extend({
           name: "マウス"
         }
       ] as Item[],
-      detail: false
+      detail: false,
+      hasError: false
     }
   },
   // ここにメソッドを追加する
@@ -55,7 +60,10 @@ export default Vue.extend({
       alert(this.msg)
     },
     showDetail(): void {
-      this.detail = !this.detail;
+      this.detail = !this.detail
+    },
+    raiseError(): void {
+      this.hasError = !this.hasError
     }
   }
 })
@@ -64,5 +72,8 @@ export default Vue.extend({
 <style scoped>
 .home {
   text-align: left
+}
+.text-danger {
+  color: darkred;
 }
 </style>
