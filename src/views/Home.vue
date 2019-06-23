@@ -10,6 +10,8 @@
     </ul>
     <h3>イベントハンドリング</h3>
     <button v-on:click="onClick">実行</button>
+    <h3>算出プロパティ</h3>
+    <p>{{ computedMsg }}</p>
   </div>
 </template>
 
@@ -23,6 +25,11 @@ declare interface Item {
 }
 
 export default Vue.extend({
+  computed: {
+    computedMsg(): string {
+      return this.msg.replace(/!/g, "") + " + TypeScript!";
+    }
+  },
   data() {
     return {
       msg: "Hello Vue.js!",
