@@ -12,6 +12,9 @@
     <button v-on:click="onClick">実行</button>
     <h3>算出プロパティ</h3>
     <p>{{ computedMsg }}</p>
+    <h3>条件付きレンダリング</h3>
+    <button v-on:click="showDetail">表示</button>
+    <div v-show="detail">詳細が表示されました。</div>
   </div>
 </template>
 
@@ -42,13 +45,17 @@ export default Vue.extend({
           id: 2,
           name: "マウス"
         }
-      ] as Item[]
+      ] as Item[],
+      detail: false
     }
   },
   // ここにメソッドを追加する
   methods: {
     onClick(): void {
       alert(this.msg)
+    },
+    showDetail(): void {
+      this.detail = !this.detail;
     }
   }
 })
