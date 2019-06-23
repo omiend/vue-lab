@@ -17,14 +17,14 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import Vue from "vue"
 
 // NoteBook型の定義
 interface NoteBook {
-  id: number;
-  brand: string;
-  name: string;
-  isUsed: boolean;
+  id: number
+  brand: string
+  name: string
+  isUsed: boolean
 }
 
 // Table画面のビューモデル
@@ -45,8 +45,8 @@ export default Vue.extend({
           isUsed: true
         }
       ] as NoteBook[]
-    };
+    }
   }
-});
+})
 </script>
 

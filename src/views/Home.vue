@@ -18,8 +18,8 @@ import Vue from "vue"
 
 // ここにインターフェースを追加
 declare interface Item {
-  id: number;
-  name: string;
+  id: number
+  name: string
 }
 
 export default Vue.extend({
@@ -41,7 +41,7 @@ export default Vue.extend({
   // ここにメソッドを追加する
   methods: {
     onClick(): void {
-      alert(this.msg);
+      alert(this.msg)
     }
   }
 })

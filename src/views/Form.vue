@@ -50,22 +50,22 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import Vue from "vue"
 
 // declare interface Hoge {
 interface Hoge {
-  title: string;
-  type: string;
-  isProduction: boolean;
-  desc: string;
+  title: string
+  type: string
+  isProduction: boolean
+  desc: string
 }
 
 // RequestFormクラスの定義
 class RequestForm implements Hoge {
-  title: string = "";
-  type: string = "";
-  isProduction: boolean = false;
-  desc: string = "";
+  title: string = ""
+  type: string = ""
+  isProduction: boolean = false
+  desc: string = ""
 }
 
 // Form画面のビューモデル
@@ -73,15 +73,15 @@ export default Vue.extend({
   data() {
     return {
       request: new RequestForm()
-    };
+    }
   },
   methods: {
     onSubmit(): void {
-      alert("登録しました");
-      this.request = new RequestForm();
+      alert("登録しました")
+      this.request = new RequestForm()
     }
   }
-});
+})
 </script>
 
 <style scoped>
