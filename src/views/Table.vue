@@ -20,7 +20,7 @@
 import Vue from "vue";
 
 // NoteBook型の定義
-declare interface NoteBook {
+interface NoteBook {
   id: number;
   brand: string;
   name: string;
@@ -50,8 +50,3 @@ export default Vue.extend({
 });
 </script>
 
-<style scoped>
-  .table {
-    text-align: left;
-  }
-</style>
